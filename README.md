@@ -65,11 +65,11 @@ $ curl http://localhost:3000/api/agents/1
 }
 ```
 
-3. Implement a controller endpoint such that a GET request to `/api/agent-match?state=OH&industry=Professional%20Beer%20Taste-Tester` displays agents licensed in the state of `OH` that work with a carrier that will sell a policy for `Professional Beer Taste-Tester`.
+3. Implement a controller endpoint such that a GET request to `/api/agents?state=OH&industry=Professional%20Beer%20Taste-Tester` displays agents licensed in the state of `OH` that work with a carrier that will sell a policy for `Professional Beer Taste-Tester`.
 
 For example:
 ```bash
-$ curl -X GET http://localhost:3000/api/agent-match -d state=OH -d industry="Professional Beer Taste-Tester"
+$ curl -X GET http://localhost:3000/api/agents -d state=OH -d industry="Professional Beer Taste-Tester"
 ```
 ```json
 [
@@ -104,9 +104,9 @@ $ curl -X GET http://localhost:3000/api/agent-match -d state=OH -d industry="Pro
 ]
 ```
 
-4. Implement an endpoint such that a GET request to `/api/agent/search?phone_number=<10-digit-numeric-only-phone>` displays details of the agent whose phone number was supplied.
+4. Expand the previous endpoint such that a GET request to `/api/agents?phone_number=<10-digit-numeric-only-phone>` displays details of the agents whose phone number was supplied.
 
-**HINT**: You'll notice the phone numbers that have been supplied are in multiple different formats. Assume that you can not simply change the seed task with the corrected format!
+**HINT**: You'll notice the phone numbers that have been supplied are in multiple different formats. Assume that you can not simply change the seed file with the corrected format!
 
 For example:
 
@@ -114,30 +114,31 @@ For example:
 $ curl http://localhost:3000/api/agent/search?phone_number=12625296931
 ```
 ```json
-{
-   "id":97,
-   "name":"Xuan Schiller",
-   "phone_number":"1-262-529-6931",
-   "created_at":"2018-11-28T20:35:52.169Z",
-   "updated_at":"2018-11-28T20:35:52.169Z"
-}
+[
+   {
+      "id":97,
+      "name":"Xuan Schiller",
+      "phone_number":"1-262-529-6931",
+      "created_at":"2018-11-28T20:35:52.169Z",
+      "updated_at":"2018-11-28T20:35:52.169Z"
+   }
+]
 ```
 
 5. Implement a **Policy** model & requisite database tables. This **Policy** model will be sold by an **Agent** and be serviced through a **Carrier**. Additionally, each **Policy** will have the name of the policy holder, the premium amount, and the **Industry** that the policy covers.
 
-Implement an endpoint such that a POST request to `/api/policy` creates a **Policy** in the database. For example:
+Implement an endpoint such that a POST request to `/api/policies` creates a **Policy** in the database. For example:
 
 ```bash
-$ curl -XPOST http://localhost:3000/api/policy -d \
-@- <<-EOF
-{
+$ curl -X POST http://localhost:3000/api/policies \
+-H 'Content-Type: application/json' \
+-d '{
   "policy_holder": "Bob Stevens",
   "premium_amount": 424.23,
   "industry_id": 1,
   "carrier_id": 1,
   "agent_id": 1
-}
-EOF
+}'
 ```
 ```json
 {
