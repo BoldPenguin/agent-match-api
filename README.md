@@ -111,7 +111,7 @@ $ curl -X GET http://localhost:3000/api/agents -d state=OH -d industry="Professi
 For example:
 
 ```bash
-$ curl http://localhost:3000/api/agent/search?phone_number=12625296931
+$ curl http://localhost:3000/api/agents?phone_number=12625296931
 ```
 ```json
 [
