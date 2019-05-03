@@ -7,6 +7,6 @@ class CarrierTest < ActiveSupport::TestCase
   end
   test 'Big City should have an industry' do
     carrier = Carrier.find_by_name('Big City Mutual Insurance')
-    assert carrier.industries.size, 1
+    assert_equal 1, carrier.industries.size
   end
 end

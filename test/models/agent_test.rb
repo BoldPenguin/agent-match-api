@@ -20,12 +20,12 @@ class AgentTest < ActiveSupport::TestCase
     james = Agent.find_by_name('James Willhelm')
     assert james.licenses.where(:state => 'OH').any?
     assert james.licenses.where(:state => 'KY').any?
-    assert james.licenses.size, 2
+    assert_equal 2, james.licenses.size
   end
 
   test 'James should work with Big City' do
     james = Agent.find_by_name('James Willhelm')
     assert james.carriers.where(:name => 'Big City Mutual Insurance').any?
-    assert james.carriers.size, 1
+    assert_equal 1, james.carriers.size
   end
 end
