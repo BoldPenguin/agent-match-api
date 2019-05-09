@@ -170,7 +170,7 @@ For clarity, this is how your code sample will be evaluated:
 | Criteria | Percentage |
 |----------|-----|
 | Object-Oriented Design Principles | 30% |
-| Readabiltiy & Maintainability | 30% |
+| Readability & Maintainability | 30% |
 | Best Practices & Naming Convention | 20% |
 | Ease of Testing Solution & Correctness | 20% |
 
