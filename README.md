@@ -28,27 +28,8 @@ $ rails db:reset        # Create the local database with test data
 
 **After completing each of the steps below, commit your changes to your local clone with a meaningful commit message.**
 
-1. How tacky! Someone has accidentally changed some functionality that broke an existing unit test. Run the automated test harness to find the error, and make the required changes to fix the failing test.
 
-```bash
-$ rails test
-
-Run options: --seed 37788
-
-# Running:
-
-.......F
-
-Finished in 0.082091s, 97.4528 runs/s, 133.9976 assertions/s.
-
-  1) Failure:
-AgentTest#test_should_validate_name_is_present [/Users/frank/Developer/git/agent-match-api/test/models/agent_test.rb:6]:
-Expected true to be nil or false
-
-8 runs, 11 assertions, 1 failures, 0 errors, 0 skips
-```
-
-2. Implement a controller endpoint such that a GET request to `/api/agents/:id` would display a JSON-representation of the agent with that id.
+1. Implement a controller endpoint such that a GET request to `/api/agents/:id` would display a JSON-representation of the agent with that id.
 
 For example:
 
@@ -65,7 +46,7 @@ $ curl http://localhost:3000/api/agents/1
 }
 ```
 
-3. Implement a controller endpoint such that a GET request to `/api/agents?state=OH&industry=Professional%20Beer%20Taste-Tester` displays agents licensed in the state of `OH` that work with a carrier that will sell a policy for `Professional Beer Taste-Tester`.
+2. Implement a controller endpoint such that a GET request to `/api/agents?state=OH&industry=Professional%20Beer%20Taste-Tester` displays agents licensed in the state of `OH` that work with a carrier that will sell a policy for `Professional Beer Taste-Tester`.
 
 For example:
 ```bash
@@ -104,7 +85,7 @@ $ curl -X GET http://localhost:3000/api/agents -d state=OH -d industry="Professi
 ]
 ```
 
-4. Expand the previous endpoint such that a GET request to `/api/agents?phone_number=<10-digit-numeric-only-phone>` displays details of the agents whose phone number was supplied.
+3. Expand the previous endpoint such that a GET request to `/api/agents?phone_number=<10-digit-numeric-only-phone>` displays details of the agents whose phone number was supplied.
 
 **HINT**: You'll notice the phone numbers that have been supplied are in multiple different formats. Assume that you can not simply change the seed file with the corrected format!
 
@@ -125,7 +106,7 @@ $ curl http://localhost:3000/api/agents?phone_number=12625296931
 ]
 ```
 
-5. Implement a **Policy** model & requisite database tables. This **Policy** model will be sold by an **Agent** and be serviced through a **Carrier**. Additionally, each **Policy** will have the name of the policy holder, the premium amount, and the **Industry** that the policy covers.
+4. Implement a **Policy** model & requisite database tables. This **Policy** model will be sold by an **Agent** and be serviced through a **Carrier**. Additionally, each **Policy** will have the name of the policy holder, the premium amount, and the **Industry** that the policy covers.
 
 Implement an endpoint such that a POST request to `/api/policies` creates a **Policy** in the database. For example:
 
@@ -161,7 +142,7 @@ $ curl -X POST http://localhost:3000/api/policies \
 }
 ```
 
-6. Complete the questions in `QUESTIONS.md`.
+5. Complete the questions in `QUESTIONS.md`.
 
 ## How this will be evaluated
 
