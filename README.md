@@ -11,7 +11,7 @@ There are 2 important entities that work together in commercial insurance.
 
 ## Getting Started
 
-Clone **this** repo, please don't make a fork of it.
+Clone **this** repo, please DO NOT make a fork of it.
 
 ```bash
 $ git clone https://github.com/BoldPenguin/agent-match-api.git
@@ -64,14 +64,14 @@ $ curl -X GET http://localhost:3000/api/agents -d state=OH -d industry="Professi
    {
       "id":66,
       "name":"Hobert Ryan DDS",
-      "phone_number":"501-950-6320",
+      "phone_number":"1-501-950-6320",
       "created_at":"2018-11-28T20:04:09.661Z",
       "updated_at":"2018-11-28T20:04:09.661Z"
    },
    {
       "id":89,
       "name":"Ericka Yost",
-      "phone_number":"563.874.2068",
+      "phone_number":"1.563.874.2068",
       "created_at":"2018-11-28T20:04:09.723Z",
       "updated_at":"2018-11-28T20:04:09.723Z"
    },
@@ -85,15 +85,23 @@ $ curl -X GET http://localhost:3000/api/agents -d state=OH -d industry="Professi
 ]
 ```
 
-3. Expand the previous endpoint such that a GET request to `/api/agents?phone_number=<10-digit-numeric-only-phone>` displays details of the agents whose phone number was supplied.
+3. Expand the previous endpoint such that a GET request to `/api/agents?phone_number=<numerics-only-phone-number>` displays details of the agents whose phone number was supplied.
 
-**HINT**: You'll notice the phone numbers that have been supplied are in multiple different formats. Assume that you can not simply change the seed file with the corrected format!
+**HINT**: You'll notice the phone numbers that have been supplied are in multiple different formats. Assume that this is an existing production database with at least 10,000 records, and that you can not simply change the seed file with the corrected format!
 
 For example:
 
 ```bash
+$ curl http://localhost:3000/api/agents?phone_number=2625296931
+
+OR
+
 $ curl http://localhost:3000/api/agents?phone_number=12625296931
 ```
+
+Should return the same record.
+
+
 ```json
 [
    {
@@ -157,7 +165,7 @@ For clarity, this is how your code sample will be evaluated:
 
 ## Submission guideliness
 
-**Please don't push your work to a public fork on GitHub!**
+**Please DO NOT push your work to a public fork on GitHub!**
 
 Using the command below, create a git bundle of your changes and send it to frank@boldpenguin.com with the subject line `[AGENT_MATCH] <your name>`.
 

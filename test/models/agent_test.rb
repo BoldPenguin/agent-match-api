@@ -23,9 +23,10 @@ class AgentTest < ActiveSupport::TestCase
     assert_equal 2, james.licenses.size
   end
 
-  test 'James should work with Big City' do
-    james = Agent.find_by_name('James Willhelm')
-    assert james.carriers.where(:name => 'Big City Mutual Insurance').any?
-    assert_equal 1, james.carriers.size
+  test 'Gemma should work with Big City and Omaha' do
+    gemma = Agent.find_by_name('Gemma Ritchie')
+    assert gemma.carriers.where(:name => 'Big City Mutual Insurance').any?
+    assert gemma.carriers.where(:name => 'Omaha Insurance Company').any?
+    assert_equal 2, gemma.carriers.size
   end
 end
