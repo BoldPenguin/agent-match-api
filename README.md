@@ -116,7 +116,7 @@ Should return the same record.
 
 4. Implement a **Policy** model & requisite database tables. This **Policy** model will be sold by an **Agent** and be serviced through a **Carrier**. Additionally, each **Policy** will have the name of the policy holder, the premium amount, and the **Industry** that the policy covers.
 
-Implement an endpoint such that a POST request to `/api/policies` creates a **Policy** in the database. For example:
+Implement an endpoint such that a POST request to `/api/policies` creates a _valid_ **Policy** in the database. For example:
 
 ```bash
 $ curl -X POST http://localhost:3000/api/policies \
@@ -125,8 +125,8 @@ $ curl -X POST http://localhost:3000/api/policies \
   "policy_holder": "Bob Stevens",
   "premium_amount": 424.23,
   "industry_id": 1,
-  "carrier_id": 1,
-  "agent_id": 1
+  "carrier_id": 9,
+  "agent_id": 2
 }'
 ```
 ```json
@@ -139,12 +139,12 @@ $ curl -X POST http://localhost:3000/api/policies \
     "name": "Underwater Electrical Wiring"
   },
   "carrier": {
-    "id": 1,
-    "name": "FarmInsure"
+    "id": 9,
+    "name": "Prestige Worldwide"
   },
   "agent": {
-    "id": 1,
-    "name": "Elliot Schimmel DVM"
+    "id": 2,
+    "name": "Nelia Graham"
   },
  "updated_at": "2018-11-28T20:35:52.169Z"
 }
