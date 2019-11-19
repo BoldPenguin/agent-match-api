@@ -11,6 +11,8 @@ There are 2 important entities that work together in commercial insurance.
 
 ## Getting Started
 
+**Please DO NOT push your work to a public fork on GitHub!**
+
 Clone **this** repo, please DO NOT make a fork of it.
 
 ```bash
@@ -87,7 +89,7 @@ $ curl -X GET http://localhost:3000/api/agents -d state=OH -d industry="Professi
 
 3. Expand the previous endpoint such that a GET request to `/api/agents?phone_number=<numerics-only-phone-number>` displays details of the agents whose phone number was supplied.
 
-**HINT**: You'll notice the phone numbers that have been supplied are in multiple different formats. Assume that this is an existing production database with at least 10,000 records, and that you can not simply change the seed file with the corrected format!
+**HINT**: You'll notice the phone numbers that have been supplied are in multiple different formats. Assume that this is an existing production database with at least 1,000,000 records, and that you can not simply change the seed file with the corrected format!
 
 For example:
 
@@ -165,21 +167,11 @@ For clarity, this is how your code sample will be evaluated:
 
 ## Submission guideliness
 
-**Please DO NOT push your work to a public fork on GitHub!**
-
-Using the command below, create a git bundle of your changes and send it to frank@boldpenguin.com with the subject line `[AGENT_MATCH] <your name>`.
-
-```bash
-$ git bundle create your_name.bundle master
-```
-
-## Contributing
-
 Be sure that all existing tests pass, and any new classes added have meaningful unit tests.
 
 `rails test`
 
-Ensure that you have atleast 80% code coverage
+Ensure that you have at least 80% code coverage
 
 `open coverage/index.html`
 
@@ -190,3 +182,11 @@ Ensure that you adhere to the rails_best_practices
 Ensure that you run brakeman to find any security-related issues
 
 `brakeman`
+
+**Please DO NOT push your work to a public fork on GitHub!**
+
+Using the command below, create a git bundle of your changes and send it to frank@boldpenguin.com with the subject line `[AGENT_MATCH] <your name>`.
+
+```bash
+$ git bundle create your_name.bundle master
+```
