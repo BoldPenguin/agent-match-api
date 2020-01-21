@@ -168,6 +168,7 @@ For clarity, this is how your code sample will be evaluated:
 ## Submission guideliness
 
 Be sure that all existing tests pass, and any new classes added have meaningful unit tests.
+The use of Minitest is intentional, please do not change the testing framework.
 
 `rails test`
 
