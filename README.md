@@ -89,7 +89,7 @@ $ curl -X GET http://localhost:3000/api/agents -d state=OH -d industry="Professi
 
 3. Expand the previous endpoint such that a GET request to `/api/agents?phone_number=<numerics-only-phone-number>` displays details of the agents whose phone number was supplied.
 
-**HINT**: You'll notice the phone numbers that have been supplied are in multiple different formats. Assume that this is an existing production database with at least 1,000,000 records, and that you can not simply change the seed file with the corrected format!
+**HINT**: You'll notice the phone numbers that have been supplied are in multiple different formats. Assume that this is an existing production database with at least 1,000,000 records, and that you can not simply change the initial seed file with the corrected format!
 
 For example:
 
@@ -116,7 +116,7 @@ Should return the same record.
 ]
 ```
 
-4. Implement a **Policy** model & requisite database tables. This **Policy** model will be sold by an **Agent** and be serviced through a **Carrier**. Additionally, each **Policy** will have the name of the policy holder, the premium amount, and the **Industry** that the policy covers.
+1. Implement a **Policy** model & requisite database tables. This **Policy** model will be sold by an **Agent** and be serviced through a **Carrier**. Additionally, each **Policy** will have the name of the policy holder, the premium amount, and the **Industry** that the policy covers.
 
 Implement an endpoint such that a POST request to `/api/policies` creates a _valid_ **Policy** in the database. For example:
 

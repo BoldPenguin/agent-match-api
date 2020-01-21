@@ -1,4 +1,5 @@
-Agent.find_or_create_by(id: 1, name: 'Elliot Schimmel DVM', phone_number: '1-214-496-5089')
+puts "Seeding Agents"
+Agent.find_or_create_by!(id: 1, name: 'Elliot Schimmel DVM', phone_number: '1-214-496-5089')
 Agent.find_or_create_by(id: 2, name: 'Nelia Graham', phone_number: '193.539.7577')
 Agent.find_or_create_by(id: 3, name: 'Melvin Blick', phone_number: '557-095-1452')
 Agent.find_or_create_by(id: 4, name: 'Jay Hartmann', phone_number: '(734) 535-5668')
@@ -118,6 +119,8 @@ Agent.find_or_create_by(id: 117, name: 'Teodoro Beahan', phone_number: '(453) 26
 Agent.find_or_create_by(id: 118, name: 'Deangelo Hermiston', phone_number: '1-756-870-1969')
 Agent.find_or_create_by(id: 119, name: 'Wm Breitenberg', phone_number: '223-404-1670')
 Agent.find_or_create_by(id: 120, name: 'Elsy Vandervort', phone_number: '908.065.9697')
+
+puts "Seeding Industries"
 Industry.find_or_create_by(id: 1, name: 'Underwater Electrical Wiring')
 Industry.find_or_create_by(id: 2, name: 'Exterior Painting of Watertowers')
 Industry.find_or_create_by(id: 3, name: 'Professional Tight-Rope Walking')
@@ -151,6 +154,8 @@ Industry.find_or_create_by(id: 30, name: 'Accounting')
 Industry.find_or_create_by(id: 31, name: 'Law Enforcement')
 Industry.find_or_create_by(id: 32, name: 'Outsourcing / Offshoring')
 Industry.find_or_create_by(id: 33, name: 'Newspapers')
+
+puts "Seeding Carriers"
 Carrier.find_or_create_by(name: 'FarmInsure')
 Carrier.find_by_name('FarmInsure').industries << Industry.find_by_name('Environmental Services')
 Carrier.find_by_name('FarmInsure').industries << Industry.find_by_name('Supermarkets')
@@ -225,6 +230,8 @@ Carrier.find_or_create_by(name: 'PenguinTech')
 Carrier.find_by_name('PenguinTech').industries << Industry.find_by_name('Libraries')
 Carrier.find_by_name('PenguinTech').industries << Industry.find_by_name('Accounting')
 Carrier.find_by_name('PenguinTech').industries << Industry.find_by_name('Outsourcing / Offshoring')
+
+puts "Seeding Licenses"
 License.find_or_create_by(agent_id: 1, state: "AL")
 License.find_or_create_by(agent_id: 1, state: "PA")
 License.find_or_create_by(agent_id: 1, state: "MA")
