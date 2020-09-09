@@ -186,7 +186,7 @@ Ensure that you run brakeman to find any security-related issues
 
 **Please DO NOT push your work to a public fork on GitHub!**
 
-Using the command below, create a git bundle of your changes and send it to frank@boldpenguin.com with the subject line `[AGENT_MATCH] <your name>`.
+Using the command below, create a git bundle of your changes and send it to ruby-code-test@boldpenguin.com with the subject line `[AGENT_MATCH] <your name>`.
 
 ```bash
 $ git bundle create your_name.bundle master
