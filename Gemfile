@@ -30,6 +30,7 @@ group :development do
   gem 'brakeman'
   gem 'rails_best_practices'
   gem 'reek', require: false
+  gem 'rubocop', '0.89.1', require: false # locks down to match CC channel
   gem 'rubocop-minitest', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
