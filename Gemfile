@@ -11,7 +11,7 @@ gem 'rails', '~> 6.0.4'
 # Please DO NOT change the database to pg or mysql without good reason
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 5.6'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
